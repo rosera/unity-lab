@@ -10,10 +10,10 @@ Rich Rose
 
 The base image uses ubuntu:18.04
 
-Ensure the Unity application is download and available in the current directory to build.
-Download the Linux version :
+Ensure the Unity application is downloaded and available in the current directory prior to building the image.
+Link to download the Linux version :
 
-+ Unity Download: https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage?_ga=2.219337498.2051047535.1570640419-436581294.1559930891
++ Unity Download:  [here](https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage)
 + Dockerfile expect the app to be named UnityHub.AppImage
 
 ## Docker Build - Dockerfile manifest
