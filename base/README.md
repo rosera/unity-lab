@@ -9,7 +9,7 @@ Rich Rose
 
 ## Base Image: 
 
-The base image uses ubuntu:18.03
+The base image uses ubuntu:18.04
 
 ## Docker Build - Dockerfile manifest
 
