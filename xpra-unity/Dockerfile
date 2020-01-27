@@ -3,8 +3,22 @@ LABEL maintainer "rich rose"
 
 ENV DEBIAN_FRONTEND noninteractive
 
+# Install XPRA - (Debian)stretch/(Ubuntu)bionic
+RUN curl https://winswitch.org/gpg.asc | apt-key add - && \
+  echo "deb http://winswitch.org/ bionic main" > /etc/apt/sources.list.d/xpra.list && \
+  apt-get update && \
+  apt-get install -y xpra \
+  xvfb \
+  xterm \
+  python3-cairo \
+  python-pyinotify \
+  xfce4 \
+  desktop-file-utils && \
+  apt-get clean && \ 
+  rm -rf /var/lib/apt/lists/* 
+  
 # Update the packages
-RUN apt-get update && apt-get install -y xfce4 desktop-file-utils
+# RUN apt-get update && apt-get install -y xfce4 desktop-file-utils
 
 # Setup user account
 ENV HOME /home/user
