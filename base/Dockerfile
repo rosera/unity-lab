@@ -60,7 +60,7 @@ WORKDIR /$HOME
 #EXPOSE $VNC_PORT $NO_VNC_PORT
 
 # Set the default USER
-USER $LOCAL_USER
+#USER $LOCAL_USER
 
 # Licence location - https://forum.unity.com/threads/unity-hub-wont-open-license-machine-id-error.659962/ #32
 # Create this directory to make the licence activation button work
