@@ -17,29 +17,10 @@ RUN curl https://winswitch.org/gpg.asc | apt-key add - && \
   apt-get clean && \ 
   rm -rf /var/lib/apt/lists/* 
   
-
-# Unity Download: https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage?_ga=2.219337498.2051047535.1570640419-436581294.1559930891
-
-# Set Environment variable 
-#ENV UNITY UnityHub.AppImage
-
 # Ensure the App has execute permissions before copying to the image
-#COPY $UNITY /usr/local/bin
 COPY unity.sh /usr/local/bin/unity.sh
 
 RUN chmod +x /usr/local/bin/unity.sh
-#RUN chmod +x /usr/local/bin/$UNITY 
-
-#RUN chown -R user:user $HOME
-
-# Run "user" as non privileged user
-#USER user
-
-#WORKDIR $HOME
-
-# Licence location - https://forum.unity.com/threads/unity-hub-wont-open-license-machine-id-error.659962/ #32
-# Create this directory to make the licence activation button work
-#RUN mkdir -p $HOME/.local/share/unity3d/Unity 
 
 # Should make this ARG value
 EXPOSE 8082
