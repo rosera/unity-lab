@@ -11,10 +11,9 @@ Rich Rose
 
 The base image uses ubuntu:18.04
 
-## Docker Build - Dockerfile manifest
+## Docker Local Build - Dockerfile manifest
 
-docker build -t qwiklabs_base:[v.v] .
-
+docker build -t unity_base:[v.v] .
 
 ## Google Cloud Build
 gcloud builds submit --config cloudbuild.yaml .
