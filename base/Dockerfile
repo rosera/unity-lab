@@ -1,7 +1,5 @@
 FROM ubuntu:bionic
-LABEL maintainer Rich Rose
-
-ENV DEBIAN_FRONTEND noninteractive
+LABEL MAINTAINER Rich Rose
 
 # Create Environment variables
 ENV UNITY UnityHub.AppImage
@@ -21,6 +19,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     VNC_PW=vncpassword \
     VNC_VIEW_ONLY=false
 
+# Install Packages
 RUN apt-get update && apt-get install -y \
         apt-transport-https \
         ca-certificates \
@@ -69,12 +68,3 @@ RUN mkdir -p /home/$LOCAL_USER/.local/share/unity3d/Unity
 
 # RUN Unity
 #ENTRYPOINT [ "/usr/local/bin/UnityHub.AppImage" ]
-
-
-# Install XPRA - (Debian)stretch/(Ubuntu)bionic
-# RUN curl https://winswitch.org/gpg.asc | apt-key add - && \
-#  echo "deb http://winswitch.org/ bionic main" > /etc/apt/sources.list.d/xpra.list && \
-#  apt-get update && \
-#  apt-get install -y xpra xvfb xterm python3-cairo python-pyinotify && \
-#  apt-get clean && \ 
-#  rm -rf /var/lib/apt/lists/*
